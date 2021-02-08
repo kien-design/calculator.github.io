@@ -1,0 +1,102 @@
+* {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+::selection {
+    color: none;
+    background: none;
+}
+
+body {
+    background-color: white;
+    background: linear-gradient(to right, blue, deepskyblue);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    min-height: 100vh;
+    grid-template-rows: minmax(120px, auto);
+    grid-template-columns: minmax(auto, 360px);
+    align-content: center;
+}
+
+.calculator-grid button {
+    font-size: 2em;
+    cursor: pointer;
+    border: 1px solid rgb(0, 119, 255);
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 119, 255);
+}
+
+.object3d {
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: repeat(5, 90px);
+    box-shadow: 
+    1.5px 1px 0 1px white,
+    2.5px 1px 0 1px white,
+    3px 1.5px 0 1px white,
+    4px 1.5px 0 1px white,
+    5px 2px 0 1px white,
+    6px 2px 0 1px white,
+    7px 2.5px 0 1px white,
+    8px 2.5px 0 1px white,
+    9px 3px 0 1px white,
+    10px 3px 0 1px white,
+    11px 3.5px 0 1px white,
+    12px 3.5px 0 1px white;
+    max-width: 360px;  
+}
+
+button:hover {
+    background-color: gainsboro;
+}
+
+button:focus {
+    background-color: rgb(0, 119, 255);
+    color: white;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    position: relative;
+    grid-column: 1 / -1;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 360px;
+}
+
+.output::after {
+    content: "";
+    height: 10%;
+    width: 122px;
+    top: 0;
+    background-color: black;
+    position: absolute;
+    transform: translate(78px, 56px) skewx(10deg) rotate(100deg);
+}
+
+.output .previous-operand {
+    color: gainsboro;
+    font-size: 1em;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2em;
+}
